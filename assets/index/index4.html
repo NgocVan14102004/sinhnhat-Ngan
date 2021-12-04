@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/price.css">
+</head>
+<body>
+    <a href="index5.html"></a>
+    <h2>Quà của bạn Văn nè !!!</h2>
+
+    <script>
+        document.addEventListener('mousemove', function(e){
+            const body = document.querySelector('body');
+            const bubbles = document.createElement('span');
+            bubbles.style.left = -40 + e.offsetX+'px';
+            bubbles.style.top = -40 + e.offsetY+'px';
+            body.appendChild(bubbles);
+        });
+
+        document.querySelector('body').onkeydown = function(event) {
+            if (event.keyCode == 13) {
+                document.querySelector('a').click()
+            }
+        }
+    </script>
+</body>
+</html>

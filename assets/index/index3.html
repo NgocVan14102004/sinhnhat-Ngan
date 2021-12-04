@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/star.css">
+</head>
+<body>
+    <section>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </section>
+    <div class="image1">
+        <img src="../img/ngan10.png" alt="" class="ngan1">
+    </div>
+
+    <audio src="../sound/ting.mp3" class="ting" autoplay="false"></audio>
+    <a href="index4.html"></a>
+
+    <script>
+        let image1 = document.querySelector('.image1');
+        let ting = document.querySelector('.ting');
+
+
+        setTimeout(function() {
+            setTimeout(function() {
+                setTimeout(function() {
+                    setTimeout(function() {
+                        ting.play()
+                        image1.classList.add('end')
+                    },5000)
+                    ting.play()
+                    image1.classList.add('off')
+                },5000)
+                ting.play()
+                image1.classList.add('on')
+            },5000)
+            ting.play()
+            image1.style.display = 'block';
+        }, 3000)
+
+        document.querySelector('body').onkeydown = function(event) {
+            if (event.keyCode == 13) {
+                document.querySelector('a').click()
+            }
+        }
+    </script>
+</body>
+</html>

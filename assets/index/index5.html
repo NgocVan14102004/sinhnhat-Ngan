@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/fly.css">
+</head>
+
+<body>
+    <div class="earth">
+        <div class="plane">
+            <img src="../img/plane.png" alt="">
+            <img src="../img/ngan9.png" alt="">
+        </div>
+    </div>
+
+    <img src="../img/ngan11.png" alt="" class="cam">
+
+    <div class="moon">
+
+    </div>
+
+    <div class="fire">
+
+    </div>
+
+    <h2>Tặng Ngân chuyến du lịch quanh trái đất luôn, nhấn rồi giữ chuột vào Trái đất đi</h2>
+
+    <a href="index6.html">Về nè !</a>
+    <button>Không chụp nữa</button>
+
+    <audio src="../sound/Di-De-Tro-Ve-SOOBIN.mp3" class="audio1"></audio>
+    <audio src="../sound/chupanh.mp3" class="audio2" loop></audio>
+
+
+    <script>
+        var n = 0;
+        const audio1 = document.querySelector('.audio1');
+        const audio2 = document.querySelector('.audio2');
+        const h2 = document.querySelector('h2');
+        const A = document.querySelector('.earth')
+        const cam = document.querySelector('.cam')
+        const btn = document.querySelector('button')
+
+        A.onmousedown = function () {
+            n += 1;
+            if (n == 1) {
+                audio1.play();
+            }
+            h2.style.display = 'none';
+            cam.style.display = 'none';
+        }
+
+        A.onmouseup = function () {
+            cam.style.display = "block";
+
+            if (cam.style.display === "block") {
+                audio2.play()
+                setTimeout(function () {
+                    cam.style.transform = 'rotateY(180deg) scale(0.5)'
+                    cam.style.top = '-50px';
+                    cam.style.left = '10vw';
+                }, 2000)
+                setTimeout(function () {
+                    cam.style.transform = 'rotateY(0deg) scale(0.3)'
+                    cam.style.top = '-75px';
+                    cam.style.left = '32vw';
+                }, 4000);
+                btn.style.display = 'block';
+            }
+        }
+
+        btn.onmousedown = function () {
+            btn.style.backgroundColor = 'rgb(205, 43, 226)'
+        }
+
+        btn.onmouseup = function () {
+            btn.style.backgroundColor = 'black'
+        }
+
+        btn.onclick = function () {
+            audio2.pause();
+        
+        }
+
+        audio1.onended = function () {
+            audio1.play();
+        }
+
+
+
+        setTimeout(function () {
+            document.querySelector('a').style.display = 'block';
+        }, 30000)
+    </script>
+</body>
+
+</html>

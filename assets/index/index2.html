@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/light.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/grid.css">
+</head>
+
+<body class="on">
+    <div class="light">
+        <div class="wire"></div>
+        <div class="buld">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="switch">
+        <div class="btn"></div>
+    </div>
+    <div class="table">
+        <div>
+            <img src="../img/bancobanh.png" alt="" class="img1">
+            <img src="../img/ngan7.png" alt="" class="uuuuu">
+        </div>
+    </div>
+    <div class="blow-btn">
+        <img src="../img/ngan52.png" alt="">
+        <span>THỔI</span>
+    </div>
+    <div class="wish">
+        <h2 class="wishly">THỔI NẾN RỒI, GIỜ DẪN ĐI ƯỚC NHA!</h2>
+        <div class="second">
+            <a href="index3.html" class="third">
+                <img src="../img/ngan12.png" alt="">
+                <h1>ĐI</h1>
+            </a>
+            <div class="funny"></div>
+        </div>
+    </div>
+
+    
+    <audio src="../sound/click.mp3" id="audio" autostart="false" ></audio>
+    <audio src="../sound/chonj.m4a" id="audio2" autostart="false" ></audio>
+    <audio src="../sound/knife.mp3" id="audio3" autostart="false" ></audio>
+    <audio src="../sound/votay.mp3" id="audio4" autostart="false" ></audio>
+    <script>
+        let btn = document.querySelector('.btn');
+        let body = document.querySelector('body');
+        let audio = document.querySelector('#audio');
+        let audio2 = document.querySelector('#audio2');
+        let audio3 = document.querySelector('#audio3');
+        let audio4 = document.querySelector('#audio4');
+        let table = document.querySelector('.table');
+        let light = document.querySelector('.light');
+        let uuuuu = document.querySelector('.uuuuu');
+        let blowBtn = document.querySelector('.blow-btn');
+        let wish = document.querySelector('.wish');
+        let n = 1;
+
+        
+        btn.onclick = function() {
+            body.classList.toggle('on');
+            body.style.background = '#111'
+            audio.play();
+            n += 1;
+
+            if (n === 2) {
+                light.style.transform = "translateY(-35vh)";
+            }
+            if (n === 3) {
+                table.style.display = "flex" ;
+                setTimeout(function() {
+                    btn.click()
+                    setTimeout(function() {
+                        audio2.play()
+                        setTimeout(function() {
+                            uuuuu.style.transform = "scale(1)"
+                            setTimeout(function() {
+                                blowBtn.style.display = "flex"
+                            },1000)
+                        }, 2000)
+                    }, 2000)
+                },2000);
+            }
+        }
+
+        blowBtn.onclick = function() {
+            audio3.play();
+            setTimeout(function() {
+                document.querySelector('.img1').attributes[0].value = "../img/bancobanhbithoi.png ";
+                setTimeout(function() {
+                    setTimeout(function() {
+                        wish.style.transform = "translateX(0)"
+                    }, 4500)
+                    audio4.play();
+                },500)
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/speak.css">
+</head>
+<body>
+    <p><span>Ngân</span>, hôm nay là ngày <span>05/12</span>, là một ngày trọng đại.</p>
+    <p>Ngày đánh dấu cột mốc 18 năm kể từ ngày mày ra đời.</p>
+    <p>Năm nay cũng sẽ là năm quan trọng nhất đối với 1 đứa học sinh á</p>
+    <p>Chúc mày bước sang tuổi mới sẽ càng rực rỡ hơn.</p>
+    <p>Ngày càng giỏi hơn nữa, ngày càng xinh đẹp hơn, </p>
+    <p>nấu ăn ngày càng ngon hơn, luôn khỏe mạnh trong tình trạng dịch bệnh như này.</p>
+    <p>Chúc mày sẽ đạt được kết quả cao nhất có thể trong các kỳ thi,</p>
+    <p>đậu vào trường đại học mong muốn.</p>
+    <p>Chúc mày có 1 ngày sinh thần thật là vui vẻ</p>
+    <p>( ý là ngày nào cũng vui nhưng mà nay vui hơn 1 tí <span>heheh</span> )</p>
+
+    <audio src="../sound/banphim.mp3" class="audio1"></audio>
+
+    <a href="index8.html"></a>
+
+    <script>
+        var audio1 = document.querySelector('.audio1');
+        audio1.play()
+        audio1.onended = function() {
+            audio1.play();
+        }
+        setTimeout(function() {
+            audio1.pause()
+            setTimeout(function() {
+                document.querySelector('a').click()
+            }, 3000)
+        },50000)
+
+
+    </script>
+</body>
+</html>
